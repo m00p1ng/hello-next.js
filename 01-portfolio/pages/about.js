@@ -3,12 +3,11 @@ import React from 'react'
 import BaseLayout from '../components/layouts/BaseLayout'
 import BasePage from '../components/BasePage'
 
-const Portfolio = ({ auth }) => (
+const About = ({ auth }) => (
   <BaseLayout {...auth}>
-    <BasePage>
-      <h1>Welcome Page</h1>
+    <BasePage className="about-page" title="I am About Page">
     </BasePage>
   </BaseLayout>
 )
 
-export default Portfolio
+export default About

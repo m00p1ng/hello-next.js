@@ -37,9 +37,9 @@ class Auth {
   setSession(authResult) {
     let expiresAt = (authResult.expiresIn * 1000) + new Date().getTime();
 
-    Cookies.set('user', authResult.idTokenPayload)
-    Cookies.set('jwt', authResult.idToken)
-    Cookies.set('expiresAt', expiresAt)
+    Cookies.set('user', authResult.idTokenPayload, { expires: 0.5 })
+    Cookies.set('jwt', authResult.idToken, { expires: 0.5 })
+    Cookies.set('expiresAt', expiresAt, { expires: 0.5 })
   }
 
   async verifyToken(token) {

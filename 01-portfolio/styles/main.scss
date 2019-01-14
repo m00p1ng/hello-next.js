@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
 
+@import './shared/colors';
+
 @import './index';
+@import './portfolios';
 
 @import './header';
 
@@ -25,6 +28,17 @@ body {
 .base-page {
   padding-top: 150px;
   color: white;
+  background-color: #ecedee;
+  min-height: 100vh;
+
+  .page-header {
+    .page-header-title {
+      font-weight: 700;
+      color: black;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .clickable {

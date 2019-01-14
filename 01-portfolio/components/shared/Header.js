@@ -21,21 +21,25 @@ const BsNavLink = ({ route, title }) => (
 )
 
 const Login = () => (
-  <span
-    className="nav-link port-navbar-link clickable"
-    onClick={auth0.login}
-  >
-    Login
-  </span>
+  <NavItem>
+    <span
+      className="nav-link port-navbar-link clickable"
+      onClick={auth0.login}
+    >
+      Login
+    </span>
+  </NavItem>
 )
 
 const Logout = () => (
-  <span
-    className="nav-link port-navbar-link clickable"
-    onClick={auth0.logout}
-  >
-    Logout
-  </span>
+  <NavItem>
+    <span
+      className="nav-link port-navbar-link clickable"
+      onClick={auth0.logout}
+    >
+      Logout
+    </span>
+  </NavItem>
 )
 
 class Header extends Component {
@@ -55,11 +59,11 @@ class Header extends Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props
+    const { isAuthenticated, className } = this.props
 
     return (
       <div>
-        <Navbar className="port-navbar port-default absolute" color="transparent" light expand="md">
+        <Navbar className={`port-navbar port-nav-base absolute ${className}`} color="transparent" light expand="md">
           <NavbarBrand className="port-navbar-brand" href="/">Filip Jerga</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -69,9 +73,7 @@ class Header extends Component {
               <BsNavLink route="/portfolios" title={"Portfolio"} />
               <BsNavLink route="/blogs" title={"Blog"} />
               <BsNavLink route="/cv" title={"CV"} />
-              <NavItem>
-                {!isAuthenticated ? <Login /> : <Logout />}
-              </NavItem>
+              {!isAuthenticated ? <Login /> : <Logout />}
             </Nav>
           </Collapse>
         </Navbar>
